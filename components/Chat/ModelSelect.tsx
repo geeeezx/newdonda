@@ -3,7 +3,7 @@ import { useContext } from 'react';
 
 import { useTranslation } from 'next-i18next';
 
-import { OpenAIModel } from '@/types/openai';
+import { OpenAIModel, OpenAIModelID } from '@/types/openai';
 import Link from "next/link"
 import HomeContext from '@/pages/api/home/home.context';
 
@@ -17,6 +17,9 @@ export const ModelSelect = () => {
   } = useContext(HomeContext);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (e.target.value == OpenAIModelID.GPT_4){
+        e.target.value = OpenAIModelID.GPT_3_5
+    }
     selectedConversation &&
       handleUpdateConversation(selectedConversation, {
         key: 'model',
