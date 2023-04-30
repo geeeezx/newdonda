@@ -42,7 +42,7 @@ export default function Home() {
         </div>
 
         <div className={styles.grid}>
-          <a
+          <Link
             href="/chatbot"
             className={styles.card}
           >
@@ -57,9 +57,9 @@ export default function Home() {
             <p>
               与人工智能聊天机器人灵魂对话
             </p>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/chatbot"
             className={styles.card}
           >
@@ -74,9 +74,9 @@ export default function Home() {
             <p >
               AI分析PDF、CSV、Word 高效办公
             </p>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/chatbot"
             className={styles.card}
           >
@@ -91,9 +91,9 @@ export default function Home() {
             <p>
               文字转艺术品 让您的创意触手可得
             </p>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/chatbot"
             className={styles.card}
           >
@@ -108,7 +108,7 @@ export default function Home() {
             <p >
               AI自动化分配任务
             </p>
-          </a>
+          </Link>
         </div>
       </main>
     </>
