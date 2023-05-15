@@ -1,7 +1,7 @@
 import { IconKey } from '@tabler/icons-react';
 import { KeyboardEvent, useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import Link from 'next/link';
 import { PluginID, PluginKey } from '@/types/plugin';
 
 import HomeContext from '@/pages/api/home/home.context';
@@ -19,7 +19,6 @@ export const PluginKeys = () => {
 
   const { handlePluginKeyChange, handleClearPluginKey } =
     useContext(ChatbarContext);
-
   const [isChanging, setIsChanging] = useState(false);
 
   const modalRef = useRef<HTMLDivElement>(null);
@@ -75,17 +74,18 @@ export const PluginKeys = () => {
                 className="dark:border-netural-400 inline-block max-h-[400px] transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all dark:bg-[#202123] sm:my-8 sm:max-h-[600px] sm:w-full sm:max-w-lg sm:p-6 sm:align-middle"
                 role="dialog"
               >
-                <div className="mb-10 text-4xl">Plugin Keys</div>
+                <div className="mb-10 text-4xl">给AI村里通网</div>
 
                 <div className="mt-6 rounded border p-4">
-                  <div className="text-xl font-bold">Google Search Plugin</div>
+                  <div className="text-xl font-bold">Google Search API KEY</div>
                   <div className="mt-4 italic">
-                    Please enter your Google API Key and Google CSE ID to enable
-                    the Google Search Plugin.
+                    <Link href={"http://www.serper.dev"}>
+                      免费获取SerperAPIKey 并输入到下方
+                    </Link>
                   </div>
 
                   <div className="mt-6 text-sm font-bold text-black dark:text-neutral-200">
-                    Google API Key
+                    Serper API Key
                   </div>
                   <input
                     className="mt-2 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
@@ -131,10 +131,10 @@ export const PluginKeys = () => {
                               key: 'GOOGLE_API_KEY',
                               value: e.target.value,
                             },
-                            {
-                              key: 'GOOGLE_CSE_ID',
-                              value: '',
-                            },
+                            // {
+                            //   key: 'GOOGLE_CSE_ID',
+                            //   value: '',
+                            // },
                           ],
                         };
 
@@ -143,7 +143,7 @@ export const PluginKeys = () => {
                     }}
                   />
 
-                  <div className="mt-6 text-sm font-bold text-black dark:text-neutral-200">
+                  {/* <div className="mt-6 text-sm font-bold text-black dark:text-neutral-200">
                     Google CSE ID
                   </div>
                   <input
@@ -200,7 +200,7 @@ export const PluginKeys = () => {
                         handlePluginKeyChange(newPluginKey);
                       }
                     }}
-                  />
+                  /> */}
 
                   <button
                     className="mt-6 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
