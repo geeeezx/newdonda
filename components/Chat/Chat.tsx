@@ -112,9 +112,9 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
             googleAPIKey: pluginKeys
               .find((key) => key.pluginId === 'google-search')
               ?.requiredKeys.find((key) => key.key === 'GOOGLE_API_KEY')?.value,
-            googleCSEId: pluginKeys
-              .find((key) => key.pluginId === 'google-search')
-              ?.requiredKeys.find((key) => key.key === 'GOOGLE_CSE_ID')?.value,
+            // googleCSEId: pluginKeys
+            //   .find((key) => key.pluginId === 'google-search')
+            //   ?.requiredKeys.find((key) => key.key === 'GOOGLE_CSE_ID')?.value,
           });
         }
         const controller = new AbortController();
